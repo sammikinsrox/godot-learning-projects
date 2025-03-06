@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=4 uid="uid://blie7qmb605cc"]
+
+[ext_resource type="PackedScene" uid="uid://dhxdbtoc1js32" path="res://scenes/level_base/level_base.tscn" id="1_rmfhy"]
+[ext_resource type="PackedScene" uid="uid://cq1t2wa2psdxb" path="res://scenes/checkpoint/checkpoint.tscn" id="2_kpbd3"]
+[ext_resource type="PackedScene" uid="uid://b10v6ni1i14af" path="res://scenes/boss/boss.tscn" id="3_oib14"]
+
+[node name="Level2" instance=ExtResource("1_rmfhy")]
+
+[node name="TileMapLayer" parent="MapLayers" index="0"]
+tile_map_data = PackedByteArray("AAAAAP//AAAHAAAAAAABAP//AAAHAAAAAAACAP//AAAHAAAAAAADAP//AAAHAAAAAAAEAP//AAAHAAAAAAAFAP//AAAHAAAAAAAGAP//AAAHAAAAAAAHAP//AAAHAAAAAAAIAP//AAAHAAAAAAAJAP//AAAHAAAAAAAKAP//AAAHAAAAAAALAP//AAAHAAAAAAAMAP//AAAHAAAAAAANAP//AAAHAAAAAAAOAP//AAAHAAAAAAAPAP//AAAHAAAAAAAQAP//AAAHAAAAAAARAP//AAAHAAAAAAASAP//AAAHAAAAAAATAP//AAAHAAAAAAAUAP//AAAHAAAAAAAVAP//AAAHAAAAAAAWAP//AAAHAAAAAAAXAP//AAAHAAAAAAAYAP//AAAHAAAAAAAZAP//AAAHAAAAAAAaAP//AAAHAAAAAAAbAP//AAAHAAAAAAAcAP//AAAHAAAAAAAdAP//AAAHAAAAAAAeAP//AAAHAAAAAAAfAP//AAAHAAAAAAAgAP//AAAHAAAAAAAhAP//AAAHAAAAAAAiAP//AAAHAAAAAAAjAP//AAAHAAAAAAAkAP//AAAHAAAAAAAlAP//AAAHAAAAAAAmAP//AAAHAAAAAAAnAP//AAAHAAAAAAAoAP//AAAHAAAAAAApAP//AAAHAAAAAAAqAP//AAAHAAAAAAArAP//AAAHAAAAAAAsAP//AAAHAAAAAAAtAP//AAAHAAAAAAAZAP7/AAASAAQAAAAZAP3/AAASAAQAAAAaAPz/AAASAAQAAAAbAPz/AAASAAQAAAA=")
+
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource("2_kpbd3")]
+position = Vector2(675, -15)
+
+[node name="ScrollingBackground" parent="." index="9"]
+level_number = 2
+
+[node name="Boss" parent="." index="10" instance=ExtResource("3_oib14")]
+position = Vector2(614, -22)
+lives = 2

@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://d10qoffn61cgn"]
+
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_5vpyh"]
+[ext_resource type="LabelSettings" uid="uid://dhq8u4l2i1dqo" path="res://assets/LG_white_48_shadow.tres" id="1_p5qsc"]
+[ext_resource type="Texture2D" uid="uid://b28bod7bcyw8c" path="res://assets/items/pixel heart 2.png" id="2_cgljl"]
+[ext_resource type="LabelSettings" uid="uid://b2dyrr3deoxuq" path="res://assets/LG_blue_64.tres" id="3_401n3"]
+[ext_resource type="LabelSettings" uid="uid://dwoj7dgthifc0" path="res://assets/LG_white_24.tres" id="4_qthm2"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5vpyh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TopSection" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00000"
+label_settings = ExtResource("1_p5qsc")
+
+[node name="HeartsContainer" type="HBoxContainer" parent="MarginContainer/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HeartOne" type="TextureRect" parent="MarginContainer/TopSection/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_cgljl")
+stretch_mode = 4
+
+[node name="HeartTwo" type="TextureRect" parent="MarginContainer/TopSection/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_cgljl")
+stretch_mode = 4
+
+[node name="HeartThree" type="TextureRect" parent="MarginContainer/TopSection/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_cgljl")
+stretch_mode = 4
+
+[node name="HeartFour" type="TextureRect" parent="MarginContainer/TopSection/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_cgljl")
+stretch_mode = 4
+
+[node name="HeartFive" type="TextureRect" parent="MarginContainer/TopSection/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_cgljl")
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.00392157, 0.0980392, 0.866667)
+
+[node name="LevelCompleteContainer" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/LevelCompleteContainer"]
+layout_mode = 2
+text = "Level Complete"
+label_settings = ExtResource("3_401n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/LevelCompleteContainer"]
+layout_mode = 2
+text = "Press JUMP for next level"
+label_settings = ExtResource("4_qthm2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverContainer" type="VBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/GameOverContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = ExtResource("3_401n3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/GameOverContainer"]
+layout_mode = 2
+text = "Press SHOOT for main menu"
+label_settings = ExtResource("4_qthm2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ContinueTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ContinueTimer" to="." method="_on_continue_timer_timeout"]
