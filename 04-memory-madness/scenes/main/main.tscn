@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci22i0pu81ieq"]
+
+[ext_resource type="LabelSettings" uid="uid://bb475bkqlpx44" path="res://assets/LG_84_Green.tres" id="1_ypq3w"]
+[ext_resource type="PackedScene" uid="uid://dn381am2ijwji" path="res://scenes/level_button/level_button.tscn" id="2_6srvr"]
+[ext_resource type="PackedScene" uid="uid://caes2tonv0pgj" path="res://scenes/front_sprite/front_sprite.tscn" id="2_b1n4t"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.493253, 0.3922, 0.53, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 110
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MEMORY MADNESS"
+label_settings = ExtResource("1_ypq3w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Levels" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="LevelButton" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 1
+
+[node name="LevelButton2" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 2
+
+[node name="LevelButton3" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 3
+
+[node name="LevelButton4" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 4
+
+[node name="LevelButton5" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 5
+
+[node name="LevelButton6" parent="ColorRect/MarginContainer/VBoxContainer/Levels" instance=ExtResource("2_6srvr")]
+layout_mode = 2
+level_number = 6
+
+[node name="Sprites" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 52
+
+[node name="FrontSprite" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2
+
+[node name="FrontSprite2" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2
+
+[node name="FrontSprite3" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2
+
+[node name="FrontSprite4" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2
+
+[node name="FrontSprite5" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2
+
+[node name="FrontSprite6" parent="ColorRect/MarginContainer/VBoxContainer/Sprites" instance=ExtResource("2_b1n4t")]
+layout_mode = 2

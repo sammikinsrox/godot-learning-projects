@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6u7sn8jnyyor"]
+
+[ext_resource type="LabelSettings" uid="uid://efdir2vdny11" path="res://assets/GM_32_Dark.tres" id="1_1qr4p"]
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_1wphq"]
+[ext_resource type="Texture2D" uid="uid://d3stg1ce17gji" path="res://assets/ui/grey_button00.png" id="2_3iskr"]
+[ext_resource type="Texture2D" uid="uid://bd7mcjwe58gf3" path="res://assets/ui/green_button00.png" id="3_35r7d"]
+[ext_resource type="Texture2D" uid="uid://p8wqw46pq8yo" path="res://assets/ui/blue_button00.png" id="4_ijrlk"]
+[ext_resource type="LabelSettings" uid="uid://bb630qrhxr0ef" path="res://assets/GM_32_White.tres" id="5_gq2gs"]
+[ext_resource type="PackedScene" uid="uid://bbi0cyda0jbpx" path="res://scenes/scorer/scorer.tscn" id="7_6tox6"]
+[ext_resource type="PackedScene" uid="uid://c46y63py8ovug" path="res://scenes/game_over_ui/game_over_ui.tscn" id="8_ipp6b"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1wphq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TilesContainer" type="GridContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="MovesLabel" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Moves"
+label_settings = ExtResource("1_1qr4p")
+
+[node name="MovesValue" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "000"
+label_settings = ExtResource("1_1qr4p")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="PairsLabel" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pairs"
+label_settings = ExtResource("1_1qr4p")
+
+[node name="PairsValue" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "00/12"
+label_settings = ExtResource("1_1qr4p")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+
+[node name="ExitButton" type="TextureButton" parent="HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_ijrlk")
+texture_pressed = ExtResource("3_35r7d")
+texture_hover = ExtResource("2_3iskr")
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -18.0
+offset_right = 100.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = ExtResource("5_gq2gs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scorer" parent="." instance=ExtResource("7_6tox6")]
+
+[node name="GameOverUI" parent="." instance=ExtResource("8_ipp6b")]
+visible = false
+layout_mode = 1
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer2/VBoxContainer/MarginContainer/ExitButton" to="." method="_on_exit_button_pressed"]
