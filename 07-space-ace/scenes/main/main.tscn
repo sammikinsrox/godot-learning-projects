@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://brgxqwdksa4sx"]
+
+[ext_resource type="Script" uid="uid://b4ipbvaovlm8s" path="res://scenes/main/main.gd" id="1_hujxm"]
+[ext_resource type="Texture2D" uid="uid://b86qin3by1c6y" path="res://assets/backgrounds/GalaxyUno.png" id="1_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://bk5o44fpbvan8" path="res://assets/backgrounds/spr_stars01.png" id="2_6q06x"]
+[ext_resource type="Texture2D" uid="uid://cs453ggd40eeo" path="res://assets/backgrounds/spr_stars02.png" id="3_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://c1ycvb6ptq0d6" path="res://scenes/sun/sun.tscn" id="4_6q06x"]
+[ext_resource type="LabelSettings" uid="uid://cb2u5o7m8jgyn" path="res://assets/LG_Title.tres" id="4_hujxm"]
+[ext_resource type="PackedScene" uid="uid://djxxp5vn43gf7" path="res://scenes/ui_button/ui_button.tscn" id="6_ow5a4"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hujxm")
+
+[node name="Nebula" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -543.0
+offset_right = 643.0
+offset_bottom = 1600.0
+texture = ExtResource("1_l3cfh")
+
+[node name="Stars1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_6q06x")
+
+[node name="Stars2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ow5a4")
+
+[node name="Sun" parent="." instance=ExtResource("4_6q06x")]
+position = Vector2(187, 234)
+scale = Vector2(1.23236, 1.23236)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SPACE ACE"
+label_settings = ExtResource("4_hujxm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="PlayButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_ow5a4")]
+layout_mode = 2
+button_text = "Play"
+
+[node name="ExitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_ow5a4")]
+layout_mode = 2
+button_text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

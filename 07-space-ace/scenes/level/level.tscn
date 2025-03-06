@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://47u0sngm1dvl"]
+
+[ext_resource type="Script" uid="uid://06dq5rqp1joc" path="res://scenes/level/level.gd" id="1_h3e3j"]
+[ext_resource type="PackedScene" uid="uid://das2kru3ud4va" path="res://scenes/level_background/level_background.tscn" id="2_nbgty"]
+[ext_resource type="PackedScene" uid="uid://bk2k2q802b47h" path="res://scenes/player/player.tscn" id="3_i166f"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_h3e3j")
+
+[node name="LevelBackground" parent="." instance=ExtResource("2_nbgty")]
+
+[node name="Player" parent="." instance=ExtResource("3_i166f")]
