@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqreuxvp1fpid"]
+
+[ext_resource type="Texture2D" uid="uid://bhsc7c80cvmtt" path="res://assets/background/sky.png" id="1_hq62e"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_sorbt"]
+[ext_resource type="LabelSettings" uid="uid://j1buycjjb8l7" path="res://assets/lg_red_72.tres" id="2_rjt0m"]
+[ext_resource type="FontFile" uid="uid://c5mk5lw0rf56h" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_s3q5w"]
+[ext_resource type="AudioStream" uid="uid://da5bb407kkau1" path="res://assets/audio/bgm_menu.mp3" id="4_fjmji"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0u4qf"]
+font = ExtResource("2_s3q5w")
+font_size = 45
+font_color = Color(0.878431, 1, 1, 1)
+outline_size = 7
+outline_color = Color(0.667998, 0.768546, 0.965747, 1)
+shadow_color = Color(2.21401e-06, 0.590576, 0.839893, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvy50"]
+font = ExtResource("2_s3q5w")
+font_size = 24
+font_color = Color(0.8, 0.188235, 0.313726, 1)
+outline_size = 10
+outline_color = Color(0.499835, 0.086307, 0.17761, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xo07"]
+font = ExtResource("2_s3q5w")
+font_size = 24
+font_color = Color(0.8, 0.188235, 0.313726, 1)
+outline_size = 10
+outline_color = Color(0.499835, 0.086307, 0.17761, 1)
+
+[sub_resource type="Animation" id="Animation_a2aja"]
+resource_name = "flash_start"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PressStart:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y75ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PressStart:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwq58"]
+_data = {
+"RESET": SubResource("Animation_y75ud"),
+"flash_start": SubResource("Animation_a2aja")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sorbt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hq62e")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GameTitle" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "TAPPY
+PLANE"
+label_settings = ExtResource("2_rjt0m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressStart" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "PRESS SPACE
+TO
+PLAY"
+label_settings = SubResource("LabelSettings_0u4qf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Highscore"
+label_settings = SubResource("LabelSettings_yvy50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0000"
+label_settings = SubResource("LabelSettings_4xo07")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dwq58")
+}
+autoplay = "flash_start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fjmji")
+volume_db = -15.0
+autoplay = true
