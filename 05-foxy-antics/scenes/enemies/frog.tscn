@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://hve7b0kmu5ip" path="res://scenes/enemy_base/enemy_base.tscn" id="1_8plic"]
 [ext_resource type="Texture2D" uid="uid://dcjfqkpgnjqgy" path="res://assets/enemies/frog/frog_sheet.png" id="2_3yiyv"]
-[ext_resource type="Script" path="res://scenes/enemies/frog.gd" id="2_lj6wf"]
+[ext_resource type="Script" uid="uid://35prtkxlb8ia" path="res://scenes/enemies/frog.gd" id="2_lj6wf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4eer"]
 atlas = ExtResource("2_3yiyv")

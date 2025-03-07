@@ -1,7 +1,7 @@
 [gd_scene load_steps=76 format=3 uid="uid://dru1cqmsq8d4j"]
 
 [ext_resource type="Texture2D" uid="uid://bsok31jvc3gwo" path="res://assets/items/Bananas.png" id="1_62k83"]
-[ext_resource type="Script" path="res://scenes/fruit_pickup/fruit_pickup.gd" id="1_xk6cw"]
+[ext_resource type="Script" uid="uid://envqfmmew5hs" path="res://scenes/fruit_pickup/fruit_pickup.gd" id="1_xk6cw"]
 [ext_resource type="Texture2D" uid="uid://dk05m3ubnun2k" path="res://assets/items/Cherries.png" id="2_6m4fm"]
 [ext_resource type="Texture2D" uid="uid://dspwm524q1yy6" path="res://assets/items/Kiwi.png" id="3_ribao"]
 [ext_resource type="Texture2D" uid="uid://bpl07cnkc1jbh" path="res://assets/items/Melon.png" id="4_stg6g"]

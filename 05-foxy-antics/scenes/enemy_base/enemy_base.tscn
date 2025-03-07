@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hve7b0kmu5ip"]
 
-[ext_resource type="Script" path="res://scenes/enemy_base/enemy_base.gd" id="1_7rd3q"]
+[ext_resource type="Script" uid="uid://ccr7tjndddxqo" path="res://scenes/enemy_base/enemy_base.gd" id="1_7rd3q"]
 
 [node name="EnemyBase" type="CharacterBody2D" groups=["Moveables"]]
 collision_layer = 0

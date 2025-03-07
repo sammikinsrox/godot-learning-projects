@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://b10v6ni1i14af"]
 
-[ext_resource type="Script" path="res://scenes/boss/boss.gd" id="1_14ty3"]
+[ext_resource type="Script" uid="uid://baih5u2dfgr2o" path="res://scenes/boss/boss.gd" id="1_14ty3"]
 [ext_resource type="Texture2D" uid="uid://pt6fvte1ucim" path="res://assets/enemies/boss/boss.png" id="1_313wf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cv70f"]
@@ -8,35 +8,6 @@ size = Vector2(10, 240)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdcrx"]
 size = Vector2(25, 55)
-
-[sub_resource type="Animation" id="Animation_ei6be"]
-resource_name = "arrive"
-length = 0.7
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/Sprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/Sprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 0.435275),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
-}
 
 [sub_resource type="Animation" id="Animation_ltrhd"]
 length = 0.001
@@ -77,21 +48,33 @@ tracks/2/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_wprpv"]
-resource_name = "pulse"
-length = 3.0
+[sub_resource type="Animation" id="Animation_ei6be"]
+resource_name = "arrive"
+length = 0.7
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual:position")
+tracks/0/path = NodePath("Visual/Sprite2D:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 0.435275),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.5, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_t07ws"]
@@ -142,13 +125,30 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_wprpv"]
+resource_name = "pulse"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtc3d"]
 _data = {
-"RESET": SubResource("Animation_ltrhd"),
-"arrive": SubResource("Animation_ei6be"),
-"attack": SubResource("Animation_t07ws"),
-"hit": SubResource("Animation_iecsc"),
-"pulse": SubResource("Animation_wprpv")
+&"RESET": SubResource("Animation_ltrhd"),
+&"arrive": SubResource("Animation_ei6be"),
+&"attack": SubResource("Animation_t07ws"),
+&"hit": SubResource("Animation_iecsc"),
+&"pulse": SubResource("Animation_wprpv")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xq0wq"]
@@ -243,7 +243,7 @@ shape = SubResource("RectangleShape2D_qdcrx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jtc3d")
+&"": SubResource("AnimationLibrary_jtc3d")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

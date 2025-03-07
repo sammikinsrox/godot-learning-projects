@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d10qoffn61cgn"]
 
-[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_5vpyh"]
+[ext_resource type="Script" uid="uid://uvvfu8pwer1m" path="res://scenes/hud/hud.gd" id="1_5vpyh"]
 [ext_resource type="LabelSettings" uid="uid://dhq8u4l2i1dqo" path="res://assets/LG_white_48_shadow.tres" id="1_p5qsc"]
 [ext_resource type="Texture2D" uid="uid://b28bod7bcyw8c" path="res://assets/items/pixel heart 2.png" id="2_cgljl"]
 [ext_resource type="LabelSettings" uid="uid://b2dyrr3deoxuq" path="res://assets/LG_blue_64.tres" id="3_401n3"]

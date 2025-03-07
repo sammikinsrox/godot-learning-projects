@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bur46rl4wavxy"]
 
 [ext_resource type="Texture2D" uid="uid://bw5ojpdn2fd5x" path="res://assets/backgrounds/game_background_1/game_background_1.png" id="1_0i45d"]
-[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_ybr2n"]
+[ext_resource type="Script" uid="uid://c7y8y61v8uwcc" path="res://scenes/main/main.gd" id="1_ybr2n"]
 [ext_resource type="FontFile" uid="uid://c2ku3y265j6ua" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_howco"]
 [ext_resource type="AudioStream" uid="uid://4ywpett7wf7p" path="res://assets/sound/Farm Frolics.ogg" id="3_fhd8l"]
 [ext_resource type="LabelSettings" uid="uid://c57087kb6t0iv" path="res://assets/LG_white_48.tres" id="5_dh10g"]

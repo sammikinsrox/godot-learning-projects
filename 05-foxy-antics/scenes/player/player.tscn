@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://crgouuooivjcx"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_dral5"]
+[ext_resource type="Script" uid="uid://d1dimny8ce7hl" path="res://scenes/player/player.gd" id="1_dral5"]
 [ext_resource type="Texture2D" uid="uid://c7iamuksqxa85" path="res://assets/player/player.png" id="1_pywi1"]
 [ext_resource type="PackedScene" uid="uid://olehg5pwvxbm" path="res://scenes/player_cam/player_cam.tscn" id="3_8bhr8"]
 [ext_resource type="PackedScene" uid="uid://b5ri3m50smfki" path="res://scenes/shooter/shooter.tscn" id="4_8jvbt"]
@@ -110,12 +110,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vur7r"]
 _data = {
-"RESET": SubResource("Animation_kt6og"),
-"fall": SubResource("Animation_0clu0"),
-"hurt": SubResource("Animation_dsnu7"),
-"idle": SubResource("Animation_d8p8k"),
-"jump": SubResource("Animation_854a0"),
-"run": SubResource("Animation_jiqm5")
+&"RESET": SubResource("Animation_kt6og"),
+&"fall": SubResource("Animation_0clu0"),
+&"hurt": SubResource("Animation_dsnu7"),
+&"idle": SubResource("Animation_d8p8k"),
+&"jump": SubResource("Animation_854a0"),
+&"run": SubResource("Animation_jiqm5")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa0qh"]
@@ -160,8 +160,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3mlr"]
 _data = {
-"RESET": SubResource("Animation_btyrk"),
-"invincible": SubResource("Animation_6u8u4")
+&"RESET": SubResource("Animation_btyrk"),
+&"invincible": SubResource("Animation_6u8u4")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Moveables", "Player"]]
@@ -175,7 +175,7 @@ frame = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vur7r")
+&"": SubResource("AnimationLibrary_vur7r")
 }
 autoplay = "idle"
 
@@ -216,7 +216,7 @@ one_shot = true
 
 [node name="InvinciblePlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u3mlr")
+&"": SubResource("AnimationLibrary_u3mlr")
 }
 
 [node name="HurtTimer" type="Timer" parent="."]

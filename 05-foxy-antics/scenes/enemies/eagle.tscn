@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8qnf2claqcit"]
 
 [ext_resource type="PackedScene" uid="uid://hve7b0kmu5ip" path="res://scenes/enemy_base/enemy_base.tscn" id="1_fw7dm"]
-[ext_resource type="Script" path="res://scenes/enemies/eagle.gd" id="2_8vmfu"]
+[ext_resource type="Script" uid="uid://uo1kugs8pc" path="res://scenes/enemies/eagle.gd" id="2_8vmfu"]
 [ext_resource type="Texture2D" uid="uid://noam750275hi" path="res://assets/enemies/eagle/eagle-attack.png" id="2_73x2b"]
 [ext_resource type="PackedScene" uid="uid://b5ri3m50smfki" path="res://scenes/shooter/shooter.tscn" id="3_nhjgd"]
 
