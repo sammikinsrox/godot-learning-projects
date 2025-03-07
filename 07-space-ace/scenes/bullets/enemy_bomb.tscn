@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxpe45mx58jkg"]
+
+[ext_resource type="PackedScene" uid="uid://bs7o3dbwie6sh" path="res://scenes/bullets/base_bullet.tscn" id="1_4ua1c"]
+[ext_resource type="Texture2D" uid="uid://coiaxafy1f411" path="res://assets/lasers/circle_bomb_red-Sheet.png" id="2_6jhp7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_no6u0"]
+radius = 12.0416
+
+[sub_resource type="Animation" id="Animation_rwf61"]
+resource_name = "explode"
+length = 0.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ik4tq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fmlb"]
+_data = {
+&"RESET": SubResource("Animation_ik4tq"),
+&"explode": SubResource("Animation_rwf61")
+}
+
+[node name="EnemyBomb" instance=ExtResource("1_4ua1c")]
+collision_layer = 8
+collision_mask = 33
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_no6u0")
+
+[node name="VisibleOnScreenEnabler2D" parent="." index="1"]
+position = Vector2(-1.19209e-07, 1.19209e-07)
+scale = Vector2(1.2, 1.2)
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_6jhp7")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_5fmlb")
+}
+autoplay = "explode"

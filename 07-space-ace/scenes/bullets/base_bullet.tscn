@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs7o3dbwie6sh"]
+[gd_scene load_steps=4 format=3 uid="uid://bs7o3dbwie6sh"]
 
 [ext_resource type="PackedScene" uid="uid://bhx2l2wnwgkao" path="res://scenes/hit_box/hit_box.tscn" id="1_gfgx0"]
 [ext_resource type="Script" uid="uid://dff6vu5s71srd" path="res://scenes/bullets/base_bullet.gd" id="2_0xma0"]
+[ext_resource type="PackedScene" uid="uid://ckdkri53k3edt" path="res://scenes/out_of_time/out_of_time.tscn" id="3_3u0jw"]
 
 [node name="BaseBullet" instance=ExtResource("1_gfgx0")]
 script = ExtResource("2_0xma0")
@@ -9,5 +10,7 @@ script = ExtResource("2_0xma0")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." index="1"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+
+[node name="OutOfTime" parent="." index="3" instance=ExtResource("3_3u0jw")]
 
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

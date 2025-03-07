@@ -11,7 +11,7 @@ var _speed: float = 200.0
 
 
 func _process(delta: float) -> void:
-	pass
+	position.y += _direction.y * _speed * delta
 
 
 func setup(direction: Vector2, speed: float) -> void:
