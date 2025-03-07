@@ -28,5 +28,6 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func blow_up() -> void:
+	SignalManager.on_create_explosion.emit(global_position, Explosion.ExplosionType.EXPLOSION)
 	set_process(false)
 	queue_free()
