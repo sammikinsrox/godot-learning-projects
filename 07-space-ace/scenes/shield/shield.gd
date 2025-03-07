@@ -22,6 +22,7 @@ func enable_shield() -> void:
 	collision_shape_2d.call_deferred("set_disabled", false)
 	timer.start()
 	show()
+	SoundManager.play_powerup_deploy_sound(sound)
 
 
 func disable_shield() -> void:

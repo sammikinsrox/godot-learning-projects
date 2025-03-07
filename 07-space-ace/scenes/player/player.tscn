@@ -83,3 +83,5 @@ libraries = {
 autoplay = "fly"
 
 [node name="Shield" parent="." instance=ExtResource("3_gmlin")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

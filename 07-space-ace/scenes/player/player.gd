@@ -8,6 +8,7 @@ const PLAYER_MOVE_MARGIN: float = 16.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var shield: Shield = $Shield
 
 
 var _player_move_min: Vector2
@@ -44,3 +45,12 @@ func _check_sprite_animation(vector: Vector2) -> void:
 		sprite_2d.flip_h = true if vector.x > 0 else false
 	else:
 		animation_player.play("fly")
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is PowerUp:
+		match area.get_power_up_type():
+			PowerUp.PowerUpType.HEALTH:
+				print("Health")
+			PowerUp.PowerUpType.SHIELD:
+				shield.enable_shield()

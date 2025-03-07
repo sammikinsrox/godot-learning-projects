@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://5f8ebu3vrd54"]
+
+[ext_resource type="PackedScene" uid="uid://bhx2l2wnwgkao" path="res://scenes/hit_box/hit_box.tscn" id="1_82c1w"]
+[ext_resource type="PackedScene" uid="uid://ckdkri53k3edt" path="res://scenes/out_of_time/out_of_time.tscn" id="2_ru046"]
+[ext_resource type="Script" uid="uid://02he6n7j87s5" path="res://scenes/power_up/power_up.gd" id="2_xn50g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ru046"]
+
+[sub_resource type="Animation" id="Animation_ru046"]
+resource_name = "flash"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xn50g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c562r"]
+_data = {
+&"RESET": SubResource("Animation_xn50g"),
+&"flash": SubResource("Animation_ru046")
+}
+
+[node name="PowerUp" instance=ExtResource("1_82c1w")]
+collision_layer = 64
+collision_mask = 1
+script = ExtResource("2_xn50g")
+_speed = 50.0
+_power_up_type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.5, 0.5)
+
+[node name="OutOfTime" parent="." index="1" instance=ExtResource("2_ru046")]
+lifetime_in_seconds = 10.0
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." index="2"]
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CircleShape2D_ru046")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_c562r")
+}
+autoplay = "flash"
