@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://caes2tonv0pgj"]
 
 [ext_resource type="Texture2D" uid="uid://d01baq4xkn64a" path="res://assets/glitch/alienYellow_square.png" id="1_xvjw7"]
-[ext_resource type="Script" path="res://scenes/front_sprite/front_sprite.gd" id="2_vmrjr"]
+[ext_resource type="Script" uid="uid://biar1miub23fb" path="res://scenes/front_sprite/front_sprite.gd" id="2_vmrjr"]
 
 [node name="FrontSprite" type="TextureRect"]
 custom_minimum_size = Vector2(64, 64)

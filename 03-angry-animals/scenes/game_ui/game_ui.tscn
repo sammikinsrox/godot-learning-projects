@@ -2,7 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://bjn1ev2his67x" path="res://assets/lg_48_wh.tres" id="1_0cn8u"]
 [ext_resource type="LabelSettings" uid="uid://jvf4b2c7b1uy" path="res://assets/lg_32_wh.tres" id="1_mfecf"]
-[ext_resource type="Script" path="res://scenes/game_ui/game_ui.gd" id="1_wdnm6"]
+[ext_resource type="Script" uid="uid://ckdf1m6ia5c14" path="res://scenes/game_ui/game_ui.gd" id="1_wdnm6"]
 
 [sub_resource type="Animation" id="Animation_5bbp7"]
 resource_name = "flash_level_complete"
@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55p1t"]
 _data = {
-"flash_level_complete": SubResource("Animation_5bbp7")
+&"flash_level_complete": SubResource("Animation_5bbp7")
 }
 
 [node name="MarginContainer" type="MarginContainer"]

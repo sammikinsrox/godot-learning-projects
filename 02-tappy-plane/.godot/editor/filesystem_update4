@@ -1,0 +1,12 @@
+res://scenes/barrier/barrier.tscn
+res://scenes/game/game.tscn
+res://scenes/gameoverui/game_over_ui.tscn
+res://scenes/hud/hud.tscn
+res://scenes/laser/laser.tscn
+res://scenes/main/main.tscn
+res://scenes/parallax_image/parallax_image.tscn
+res://scenes/pipe/pipe.tscn
+res://scenes/pipes/pipes.tscn
+res://scenes/plane/plane.tscn
+res://scenes/scrolling_bg/scrolling_bg.tscn
+res://scenes/scrolling_layer/scrolling_layer.tscn

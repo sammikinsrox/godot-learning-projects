@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://lp3vm5wmynw0"]
 
 [ext_resource type="Texture2D" uid="uid://jbkrm8scxhoi" path="res://assets/player/parrot.png" id="1_2sjrp"]
-[ext_resource type="Script" path="res://scenes/animal/animal.gd" id="1_fumfl"]
+[ext_resource type="Script" uid="uid://60nxdatsyrxp" path="res://scenes/animal/animal.gd" id="1_fumfl"]
 [ext_resource type="Texture2D" uid="uid://be62vdtxcxyi6" path="res://assets/items/arrow.png" id="3_vwqne"]
 [ext_resource type="AudioStream" uid="uid://c6lcagp0cwp36" path="res://assets/audio/stretch2.ogg" id="4_vtnek"]
 [ext_resource type="AudioStream" uid="uid://h6235w1hk6p5" path="res://assets/audio/catapult.ogg" id="5_ifkhi"]

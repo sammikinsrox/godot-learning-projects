@@ -1,9 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1ghgublg1v5e"]
+[gd_scene load_steps=4 format=3 uid="uid://b1ghgublg1v5e"]
 
 [ext_resource type="PackedScene" uid="uid://k4fj8nwuxsgf" path="res://scenes/level/level.tscn" id="1_1yr15"]
 [ext_resource type="PackedScene" uid="uid://dr6aum0q1ym0i" path="res://scenes/cup/cup.tscn" id="2_2prpy"]
+[ext_resource type="LabelSettings" uid="uid://d2vtadlhydlej" path="res://assets/lg_24_wh.tres" id="3_q5d1x"]
 
 [node name="Level" instance=ExtResource("1_1yr15")]
 
-[node name="Cup" parent="." index="3" instance=ExtResource("2_2prpy")]
-position = Vector2(306, 416)
+[node name="Label2" type="Label" parent="." index="1"]
+offset_left = 22.0
+offset_top = 250.0
+offset_right = 364.0
+offset_bottom = 275.0
+text = "Pull back on animal to lauch"
+label_settings = ExtResource("3_q5d1x")
+
+[node name="Label" type="Label" parent="." index="2"]
+offset_left = 330.0
+offset_top = 444.0
+offset_right = 839.0
+offset_bottom = 477.0
+text = "Land the animal in the box"
+label_settings = ExtResource("3_q5d1x")
+
+[node name="Cup" parent="." index="5" instance=ExtResource("2_2prpy")]
+position = Vector2(475, 422)
+
+[node name="GameUI" parent="." index="7"]
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 1162.0
+offset_bottom = 646.0

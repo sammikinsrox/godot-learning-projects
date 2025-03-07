@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cqreuxvp1fpid"]
 
 [ext_resource type="Texture2D" uid="uid://bhsc7c80cvmtt" path="res://assets/background/sky.png" id="1_hq62e"]
-[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_sorbt"]
+[ext_resource type="Script" uid="uid://c6e31oe467k12" path="res://scenes/main/main.gd" id="1_sorbt"]
 [ext_resource type="LabelSettings" uid="uid://j1buycjjb8l7" path="res://assets/lg_red_72.tres" id="2_rjt0m"]
 [ext_resource type="FontFile" uid="uid://c5mk5lw0rf56h" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_s3q5w"]
 [ext_resource type="AudioStream" uid="uid://da5bb407kkau1" path="res://assets/audio/bgm_menu.mp3" id="4_fjmji"]
@@ -29,6 +29,21 @@ font_color = Color(0.8, 0.188235, 0.313726, 1)
 outline_size = 10
 outline_color = Color(0.499835, 0.086307, 0.17761, 1)
 
+[sub_resource type="Animation" id="Animation_y75ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PressStart:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_a2aja"]
 resource_name = "flash_start"
 loop_mode = 1
@@ -46,25 +61,10 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_y75ud"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/PressStart:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dwq58"]
 _data = {
-"RESET": SubResource("Animation_y75ud"),
-"flash_start": SubResource("Animation_a2aja")
+&"RESET": SubResource("Animation_y75ud"),
+&"flash_start": SubResource("Animation_a2aja")
 }
 
 [node name="Main" type="Control"]
@@ -136,7 +136,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_dwq58")
+&"": SubResource("AnimationLibrary_dwq58")
 }
 autoplay = "flash_start"
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr6aum0q1ym0i"]
 
 [ext_resource type="Texture2D" uid="uid://df8xt0yq0jjca" path="res://assets/env/elementWood004.png" id="1_75c1k"]
-[ext_resource type="Script" path="res://scenes/cup/cup.gd" id="1_blkj2"]
+[ext_resource type="Script" uid="uid://c4mlamrbw6qpl" path="res://scenes/cup/cup.gd" id="1_blkj2"]
 [ext_resource type="Texture2D" uid="uid://bgtvne1mu3hls" path="res://assets/env/elementWood015.png" id="2_in8sg"]
 [ext_resource type="AudioStream" uid="uid://g1oorg5s7yts" path="res://assets/audio/vanish.wav" id="4_e81lm"]
 
@@ -54,8 +54,8 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6el68"]
 _data = {
-"RESET": SubResource("Animation_uxs63"),
-"vanish": SubResource("Animation_nd7em")
+&"RESET": SubResource("Animation_uxs63"),
+&"vanish": SubResource("Animation_nd7em")
 }
 
 [node name="Cup" type="StaticBody2D" groups=["cup"]]

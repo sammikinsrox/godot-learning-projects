@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b7docv1f2u3yf"]
 
 [ext_resource type="Texture2D" uid="uid://dms8he1bg1pic" path="res://assets/background/rocks_2.png" id="1_c3ecc"]
-[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_lqp2x"]
+[ext_resource type="Script" uid="uid://cv58a8uqi2sda" path="res://scenes/game/game.gd" id="1_lqp2x"]
 [ext_resource type="PackedScene" uid="uid://dvaalq0kogm3b" path="res://scenes/scrolling_bg/scrolling_bg.tscn" id="2_2ydko"]
 [ext_resource type="PackedScene" uid="uid://drvtcahboevuc" path="res://scenes/parallax_image/parallax_image.tscn" id="2_4y04i"]
 [ext_resource type="PackedScene" uid="uid://q4fqmne0pajr" path="res://scenes/plane/plane.tscn" id="2_6j864"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6u7sn8jnyyor"]
 
 [ext_resource type="LabelSettings" uid="uid://efdir2vdny11" path="res://assets/GM_32_Dark.tres" id="1_1qr4p"]
-[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_1wphq"]
+[ext_resource type="Script" uid="uid://bhnh4255rtdqp" path="res://scenes/game/game.gd" id="1_1wphq"]
 [ext_resource type="Texture2D" uid="uid://d3stg1ce17gji" path="res://assets/ui/grey_button00.png" id="2_3iskr"]
 [ext_resource type="Texture2D" uid="uid://bd7mcjwe58gf3" path="res://assets/ui/green_button00.png" id="3_35r7d"]
 [ext_resource type="Texture2D" uid="uid://p8wqw46pq8yo" path="res://assets/ui/blue_button00.png" id="4_ijrlk"]

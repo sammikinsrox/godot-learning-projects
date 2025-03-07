@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drvtcahboevuc"]
 
-[ext_resource type="Script" path="res://scenes/parallax_image/parallax_image.gd" id="1_6bbrc"]
+[ext_resource type="Script" uid="uid://boll2q25clm04" path="res://scenes/parallax_image/parallax_image.gd" id="1_6bbrc"]
 
 [node name="ParallaxImage" type="Parallax2D"]
 follow_viewport = false

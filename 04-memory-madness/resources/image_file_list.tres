@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ImageFileList" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="ImageFileList" load_steps=2 format=3 uid="uid://dnk8cw66hrcxt"]
 
-[ext_resource type="Script" path="res://resources/image_files_list.gd" id="1_f1x7e"]
+[ext_resource type="Script" uid="uid://d0wx6688kxntf" path="res://resources/image_files_list.gd" id="1_f1x7e"]
 
 [resource]
 script = ExtResource("1_f1x7e")

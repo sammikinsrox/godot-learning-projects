@@ -1,0 +1,13 @@
+res://scenes/animal/animal.tscn
+res://scenes/cup/cup.tscn
+res://scenes/game_ui/game_ui.tscn
+res://scenes/launch_area/launch_area.tscn
+res://scenes/level/level.tscn
+res://scenes/level_01/level_01.tscn
+res://scenes/level_02/level_02.tscn
+res://scenes/level_03/level_03.tscn
+res://scenes/level_button/level_button.tscn
+res://scenes/main/main.tscn
+res://scenes/scorer/scorer.tscn
+res://scenes/tester/tester.tscn
+res://scenes/water/water.tscn

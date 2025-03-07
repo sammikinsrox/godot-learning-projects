@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwri0hc31c6mk" path="res://assets/ui/level_select_frame_128.png" id="1_cpib1"]
 [ext_resource type="Texture2D" uid="uid://bbh7xfsgt63wp" path="res://assets/ui/level_select_frame_select_128.png" id="2_kwp2l"]
 [ext_resource type="Texture2D" uid="uid://cvsfrja3e0tmm" path="res://assets/ui/level_select_frame_hover_128.png" id="3_83gsu"]
-[ext_resource type="Script" path="res://scenes/level_button/level_button.gd" id="4_j6na7"]
+[ext_resource type="Script" uid="uid://fvvmci3lavuj" path="res://scenes/level_button/level_button.gd" id="4_j6na7"]
 [ext_resource type="LabelSettings" uid="uid://bb630qrhxr0ef" path="res://assets/GM_32_White.tres" id="4_smxf4"]
 
 [node name="LevelButton" type="TextureButton"]

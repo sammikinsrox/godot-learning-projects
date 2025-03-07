@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clmopoieua4ms"]
 
 [ext_resource type="FontFile" uid="uid://c5mk5lw0rf56h" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_lqoxu"]
-[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_uachs"]
+[ext_resource type="Script" uid="uid://ck4q1bh2e52i8" path="res://scenes/hud/hud.gd" id="1_uachs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o8t2l"]
 font = ExtResource("1_lqoxu")
