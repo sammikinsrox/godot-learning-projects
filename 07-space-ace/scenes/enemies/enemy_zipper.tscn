@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://brqnrmqj6xuya"]
+
+[ext_resource type="PackedScene" uid="uid://4tld3va0wpo2" path="res://scenes/enemy_base/enemy_base.tscn" id="1_0kqmv"]
+[ext_resource type="Texture2D" uid="uid://dx2cv8x5ngyrt" path="res://assets/ships/zipper_1.png" id="2_yjx04"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6slh"]
+atlas = ExtResource("2_yjx04")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4x55"]
+atlas = ExtResource("2_yjx04")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsu2m"]
+atlas = ExtResource("2_yjx04")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p3c5"]
+atlas = ExtResource("2_yjx04")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkyjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6slh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4x55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsu2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p3c5")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="EnemyZipper" instance=ExtResource("1_0kqmv")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_tkyjy")
+animation = &"fly"
+frame_progress = 0.980376
+flip_v = true

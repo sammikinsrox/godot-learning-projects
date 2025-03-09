@@ -1,0 +1,142 @@
+[gd_scene load_steps=22 format=3 uid="uid://clsfb5wacxntg"]
+
+[ext_resource type="PackedScene" uid="uid://4tld3va0wpo2" path="res://scenes/enemy_base/enemy_base.tscn" id="1_figrp"]
+[ext_resource type="Texture2D" uid="uid://2y852xcy1cko" path="res://assets/ships/bomber_1.png" id="2_amtil"]
+[ext_resource type="Texture2D" uid="uid://dceqlg3eh7nbs" path="res://assets/ships/bomber_2.png" id="3_7xdgq"]
+[ext_resource type="Texture2D" uid="uid://cnfv313u3e5sq" path="res://assets/ships/bomber_3.png" id="4_d26j7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bb2c"]
+atlas = ExtResource("2_amtil")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc82j"]
+atlas = ExtResource("2_amtil")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki0ys"]
+atlas = ExtResource("2_amtil")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ubck"]
+atlas = ExtResource("2_amtil")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbqdw"]
+atlas = ExtResource("2_amtil")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg8rs"]
+atlas = ExtResource("2_amtil")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qallw"]
+atlas = ExtResource("2_amtil")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sc1r"]
+atlas = ExtResource("2_amtil")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kq4k"]
+atlas = ExtResource("3_7xdgq")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjlh0"]
+atlas = ExtResource("3_7xdgq")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgwxm"]
+atlas = ExtResource("3_7xdgq")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb4kr"]
+atlas = ExtResource("3_7xdgq")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55hgr"]
+atlas = ExtResource("4_d26j7")
+region = Rect2(0, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx4p2"]
+atlas = ExtResource("4_d26j7")
+region = Rect2(48, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olxqm"]
+atlas = ExtResource("4_d26j7")
+region = Rect2(96, 0, 48, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6poa"]
+atlas = ExtResource("4_d26j7")
+region = Rect2(144, 0, 48, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q81gg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bb2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc82j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki0ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ubck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbqdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg8rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qallw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sc1r")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kq4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjlh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgwxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb4kr")
+}],
+"loop": true,
+"name": &"fly2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55hgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx4p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olxqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6poa")
+}],
+"loop": true,
+"name": &"fly3",
+"speed": 5.0
+}]
+
+[node name="EnemyBomber" instance=ExtResource("1_figrp")]
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_q81gg")
+animation = &"fly3"

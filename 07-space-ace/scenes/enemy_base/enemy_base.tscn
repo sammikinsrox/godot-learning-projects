@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://4tld3va0wpo2"]
+
+[ext_resource type="Script" uid="uid://ujhxoilvu3v" path="res://scenes/enemy_base/enemy_base.gd" id="1_d8hxv"]
+[ext_resource type="PackedScene" uid="uid://ckdkri53k3edt" path="res://scenes/out_of_time/out_of_time.tscn" id="1_k7rgy"]
+[ext_resource type="PackedScene" uid="uid://bhx2l2wnwgkao" path="res://scenes/hit_box/hit_box.tscn" id="2_d8hxv"]
+
+[node name="EnemyBase" type="PathFollow2D"]
+script = ExtResource("1_d8hxv")
+
+[node name="OutOfTime" parent="." instance=ExtResource("1_k7rgy")]
+
+[node name="HitBox" parent="." instance=ExtResource("2_d8hxv")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
