@@ -5,10 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://bhx2l2wnwgkao" path="res://scenes/hit_box/hit_box.tscn" id="2_d8hxv"]
 
 [node name="EnemyBase" type="PathFollow2D"]
+rotates = false
 script = ExtResource("1_d8hxv")
 
 [node name="OutOfTime" parent="." instance=ExtResource("1_k7rgy")]
+lifetime_in_seconds = 30.0
 
 [node name="HitBox" parent="." instance=ExtResource("2_d8hxv")]
+collision_layer = 2
+collision_mask = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

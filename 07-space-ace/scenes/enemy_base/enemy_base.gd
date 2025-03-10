@@ -1,10 +1,18 @@
-extends PathFollow2D
+class_name EnemyBase extends PathFollow2D
 
 
-@export var speed: float = 0.05
+@export var _speed: float = 50.0
+
+
 
 
 
 func _process(delta: float) -> void:
-	progress_ratio += delta * speed
+	progress += _speed * delta
 	
+	if progress_ratio > 0.99:
+		queue_free()
+
+
+func setup(speed: float) -> void:
+	_speed = speed

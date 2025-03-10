@@ -1,9 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://clsfb5wacxntg"]
+[gd_scene load_steps=23 format=3 uid="uid://clsfb5wacxntg"]
 
 [ext_resource type="PackedScene" uid="uid://4tld3va0wpo2" path="res://scenes/enemy_base/enemy_base.tscn" id="1_figrp"]
 [ext_resource type="Texture2D" uid="uid://2y852xcy1cko" path="res://assets/ships/bomber_1.png" id="2_amtil"]
 [ext_resource type="Texture2D" uid="uid://dceqlg3eh7nbs" path="res://assets/ships/bomber_2.png" id="3_7xdgq"]
 [ext_resource type="Texture2D" uid="uid://cnfv313u3e5sq" path="res://assets/ships/bomber_3.png" id="4_d26j7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amtil"]
+size = Vector2(48, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bb2c"]
 atlas = ExtResource("2_amtil")
@@ -137,6 +140,12 @@ animations = [{
 
 [node name="EnemyBomber" instance=ExtResource("1_figrp")]
 
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_amtil")
+
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_q81gg")
 animation = &"fly3"
+autoplay = "fly3"
+
+[editable path="HitBox"]

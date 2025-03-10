@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://brqnrmqj6xuya"]
+[gd_scene load_steps=9 format=3 uid="uid://brqnrmqj6xuya"]
 
 [ext_resource type="PackedScene" uid="uid://4tld3va0wpo2" path="res://scenes/enemy_base/enemy_base.tscn" id="1_0kqmv"]
 [ext_resource type="Texture2D" uid="uid://dx2cv8x5ngyrt" path="res://assets/ships/zipper_1.png" id="2_yjx04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kqmv"]
+size = Vector2(44, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6slh"]
 atlas = ExtResource("2_yjx04")
@@ -41,8 +44,15 @@ animations = [{
 
 [node name="EnemyZipper" instance=ExtResource("1_0kqmv")]
 
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0kqmv")
+
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_tkyjy")
 animation = &"fly"
+autoplay = "fly"
 frame_progress = 0.980376
 flip_v = true
+
+[editable path="HitBox"]

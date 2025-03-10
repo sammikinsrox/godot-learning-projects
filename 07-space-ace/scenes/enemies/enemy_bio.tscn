@@ -1,10 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://choip6lqjnky3"]
+[gd_scene load_steps=24 format=3 uid="uid://choip6lqjnky3"]
 
 [ext_resource type="PackedScene" uid="uid://4tld3va0wpo2" path="res://scenes/enemy_base/enemy_base.tscn" id="1_fw0db"]
 [ext_resource type="Texture2D" uid="uid://qnfdqa4mwn6r" path="res://assets/ships/biomech_1.png" id="2_nhw6l"]
 [ext_resource type="Texture2D" uid="uid://c0lccycoknpo8" path="res://assets/ships/biomech_2.png" id="3_fkhgt"]
 [ext_resource type="Texture2D" uid="uid://dxe5o7mqs00eb" path="res://assets/ships/biomech_3.png" id="4_vc1uc"]
 [ext_resource type="Texture2D" uid="uid://bo8uojvdf61it" path="res://assets/ships/biomech_4.png" id="5_h0de4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhw6l"]
+size = Vector2(36, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ts3vy"]
 atlas = ExtResource("2_nhw6l")
@@ -143,9 +146,15 @@ animations = [{
 
 [node name="EnemyBio" instance=ExtResource("1_fw0db")]
 
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("RectangleShape2D_nhw6l")
+
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_s01ti")
 animation = &"fly4"
+autoplay = "fly4"
 frame = 2
 frame_progress = 0.264214
 flip_v = true
+
+[editable path="HitBox"]

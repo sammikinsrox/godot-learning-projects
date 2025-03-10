@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://47u0sngm1dvl"]
+[gd_scene load_steps=7 format=3 uid="uid://47u0sngm1dvl"]
 
 [ext_resource type="Script" uid="uid://06dq5rqp1joc" path="res://scenes/level/level.gd" id="1_h3e3j"]
 [ext_resource type="PackedScene" uid="uid://das2kru3ud4va" path="res://scenes/level_background/level_background.tscn" id="2_nbgty"]
 [ext_resource type="PackedScene" uid="uid://bk2k2q802b47h" path="res://scenes/player/player.tscn" id="3_i166f"]
 [ext_resource type="PackedScene" uid="uid://bom7gpb80ytw0" path="res://scenes/object_maker/object_maker.tscn" id="4_qkmgm"]
+[ext_resource type="PackedScene" uid="uid://brqnrmqj6xuya" path="res://scenes/enemies/enemy_zipper.tscn" id="5_wcngd"]
 
-[sub_resource type="Curve2D" id="Curve2D_qkmgm"]
+[sub_resource type="Curve2D" id="Curve2D_hnne4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 183, 161, 0, 0, 0, 0, 302, 307, 0, 0, 0, 0, 496, 359)
+}
+point_count = 3
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_h3e3j")
@@ -19,4 +24,7 @@ script = ExtResource("1_h3e3j")
 [node name="EnemyPaths" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemyPaths"]
-curve = SubResource("Curve2D_qkmgm")
+curve = SubResource("Curve2D_hnne4")
+
+[node name="EnemyZipper" parent="EnemyPaths/Path2D" instance=ExtResource("5_wcngd")]
+position = Vector2(183, 161)
